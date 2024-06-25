@@ -1,0 +1,35 @@
+.upperpart{
+    padding: 30px;
+    // margin-bottom: 50px;
+    .wrapper1{
+        display: flex;
+        justify-content: space-between;
+    }
+    .wrapper2{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 2rem;
+        gap: 20px;
+        .secretnumber{
+            font-size: 3rem;
+            // border: 5px solid white;
+            padding: 10px 40px;
+            font-weight: 700;
+            background-color: white;
+            color: #222;
+        }
+    }
+}
+
+@media(max-width:500px){
+    .upperpart{
+        .wrapper2{
+            font-size: 1.4rem;
+            .secretnumber{
+                padding: 5px 30px;
+                font-size: 2.5rem;
+            }
+        }
+    }
+}

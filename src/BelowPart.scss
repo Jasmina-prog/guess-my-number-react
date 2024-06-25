@@ -1,0 +1,42 @@
+.belowpart{
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    justify-content: space-around;
+    .wrapper3 {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        input{
+            font-size: 35px;
+            height: 30px;
+            text-align: center;
+            justify-content: center;
+            width: 130px;
+            padding: 25px 0;
+            font-weight: 700;
+            background-color: transparent;
+            border: 4px solid white;
+            color: #222;
+        }
+    }
+    .wrapper4{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.wrapper4{
+    .message{
+        margin-bottom: 30px;
+    }
+}
+
+@media(max-width:500px){
+    .belowpart{
+        font-size: 15px;
+    }
+    button{
+        padding: 10px 30px;
+    }
+}
