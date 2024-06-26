@@ -17,7 +17,7 @@
             font-weight: 700;
             background-color: transparent;
             border: 4px solid white;
-            color: #222;
+            color: white;
         }
     }
     .wrapper4{
@@ -26,6 +26,11 @@
     }
 }
 
+.wrapper3{
+    input:hover{ 
+        box-shadow: 0 0 20px 5px black;
+    }
+}
 .wrapper4{
     .message{
         margin-bottom: 30px;

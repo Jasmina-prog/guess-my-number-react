@@ -2,7 +2,7 @@ import "./Button.scss"
 
 function Button(props) {
     return(
-        <button>{props.title}</button>
+        <button onClick={props.checkFn}>{props.title}</button>
     )
 }
 
