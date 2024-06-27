@@ -1,7 +1,5 @@
 
 import './App.css'
-import { BelowPart } from './BelowPart'
-import { UpperPart } from './UpperPart'
 import Button from "./Button"
 import "./UpperPart.scss"
 import { useRef } from "react"
@@ -13,16 +11,16 @@ function App() {
 
 
     const [secretNumber, setSecretNumber] = useState(Math.trunc(Math.random()*20)+1)
-    console.log(secretNumber);
+    const [isSuccess, setIsSeccess] = useState(false)
     const testFunc=()=>{
-        console.log('this too');
+        setSecretNumber(Math.trunc(Math.random()*20)+1)
     }
     const input = useRef()
     const checkNumber=()=>{
-        console.log(input.current.value);
           
-        if(input.current.value === secretNumber){
-          console.log(true)
+        if(input.current.value == secretNumber){
+          setIsSeccess(true)
+          
         } else{
           console.log(false)
         }
@@ -40,12 +38,12 @@ function App() {
 
             <div className="wrapper2">
                 <h1>Guess My Number!</h1>
-                <div className="secretnumber">?</div>
+                <div className="secretnumber">{isSuccess ? (secretNumber) : "?"}</div>
                 
             </div>
 
         </section>
-
+          <h2>{secretNumber}</h2>
 
       <section className="belowpart">
 
