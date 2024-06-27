@@ -1,15 +1,18 @@
 import Button from "./Button"
 import "./UpperPart.scss"
 import { useRef } from "react"
+import { useState } from "react"
 
 export function UpperPart (){
     const secretNumb = useRef()
-    let secretNumber = Math.trunc(Math.random()*20)+1
-    secretNumb.textContent = secretNumber
-    console.log(secretNumb.textContent);
+    console.log(secretNumb);
+
+    const [secretNumber, setSecretNumber] = useState(Math.trunc(Math.random()*20)+1)
+    console.log(secretNumber);
     const testFunc=()=>{
         console.log('this too');
     }
+
     return(
         <section className="upperpart">
 

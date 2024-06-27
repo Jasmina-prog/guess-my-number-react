@@ -2,9 +2,9 @@ import "./BelowPart.scss"
 import Button from "./Button"
 import { useRef } from "react";
 
-export function BelowPart(){
+export function BelowPart(props){
     const input = useRef()
-
+    console.log(props.secretNumber);
     const checkNumber=()=>{
         console.log(input.current.value);
     }
