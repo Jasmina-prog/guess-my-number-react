@@ -11,8 +11,6 @@ import "./UpperPart.scss"
 
 function App() {
 
-    const secretNumb = useRef()
-    console.log(secretNumb);
 
     const [secretNumber, setSecretNumber] = useState(Math.trunc(Math.random()*20)+1)
     console.log(secretNumber);
@@ -20,9 +18,14 @@ function App() {
         console.log('this too');
     }
     const input = useRef()
-    console.log(secretNumber);
     const checkNumber=()=>{
         console.log(input.current.value);
+          
+        if(input.current.value === secretNumber){
+          console.log(true)
+        } else{
+          console.log(false)
+        }
     }
   return (
     <>
@@ -37,7 +40,8 @@ function App() {
 
             <div className="wrapper2">
                 <h1>Guess My Number!</h1>
-                <div className="secretnumber" ref={secretNumb}>?</div>
+                <div className="secretnumber">?</div>
+                
             </div>
 
         </section>
