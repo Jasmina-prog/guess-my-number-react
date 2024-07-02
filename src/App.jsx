@@ -11,34 +11,31 @@ function App() {
 
 
     const [secretNumber, setSecretNumber] = useState(Math.trunc(Math.random()*20)+1)
-    const [isSuccess, setIsSeccess] = useState(false)
-    const [isLow, setIsLow] = useState(false)
-    const [isHigh, setIsHigh] = useState(false)
     let [score, setScore] = useState(20)
-
+    const [textToUser, setTextToUser] = useState("Start guessing...")
+    const [isSuccess, setIsSuccess] = useState(false)
     const testFunc=()=>{
         setSecretNumber(Math.trunc(Math.random()*20)+1)
-        setIsSeccess(false)
-        setIsLow(false)
-        setIsHigh(false)
         input.current.value = ""
         setScore(score = 20)
+        setIsSuccess(false)
     }
 
     const input = useRef()
     const checkNumber=()=>{
           
         if(input.current.value == secretNumber){
-          setIsSeccess(true)
           input.current.value = ""
+          setIsSuccess(true)
+          setTextToUser("You won 🎉🎉🎉")
         } else if(input.current.value < secretNumber){
-          setIsLow(true)
           input.current.value = ""
           setScore(score - 1)
+          setTextToUser("Too Low 📉")
         } else if(input.current.value > secretNumber){
-          setIsHigh(true)
           input.current.value = ""
           setScore(score - 1)
+          setTextToUser("Too high 📈")
         }
     }
   return (
@@ -70,12 +67,7 @@ function App() {
 
 
             <div className="wrapper4">
-                <h2 className="message">
-                  {isSuccess ? "You won 🎉" : "Start guessing..." &&
-                   isLow ? "Too Low" : "Start guessing..." &&
-                   isHigh ? "Too High" : "Start guessing..."
-                  } 
-                  </h2>
+                <h2 className="message">{textToUser}</h2>
                 <h2>⭐Score: <span className="score">{score}</span> </h2>
                 <h2>🔥Highscore: <span className="highscore">0</span> </h2>
             </div>
